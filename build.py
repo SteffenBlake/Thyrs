@@ -14,13 +14,13 @@ from markdown.extensions import Extension
 from markdown.preprocessors import Preprocessor
 
 class DicierPreprocessor(Preprocessor):
-    """Convert {dice:CODE} syntax to <span class="dicier">CODE</span>"""
+    """Convert {dicier:CODE} syntax to <span class="dicier">CODE</span>"""
     
     def run(self, lines):
         new_lines = []
         for line in lines:
-            # Replace {dice:CODE} with <span class="dicier">CODE</span>
-            line = re.sub(r'\{dice:([^}]+)\}', r'<span class="dicier">\1</span>', line)
+            # Replace {dicier:CODE} with <span class="dicier">CODE</span>
+            line = re.sub(r'\{dicier:([^}]+)\}', r'<span class="dicier">\1</span>', line)
             new_lines.append(line)
         return new_lines
 
