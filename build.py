@@ -42,13 +42,16 @@ def fix_toc_with_dicier(toc_html, html_content):
     TOC links to match.
     """
     # Extract all headers with their IDs and content from the generated HTML
-    headers = re.findall(r'<h([1-6]) id="([^"]+)">(.+?)</h\1>', html_content)
+    # Use DOTALL flag to handle headers that may span multiple lines
+    headers = re.findall(r'<h([1-6]) id="([^"]+)">(.+?)</h\1>', html_content, re.DOTALL)
     
     # Update TOC links to use the same content as the headers
     for level, header_id, content in headers:
-        # Find the TOC link with this ID and replace its inner text with the header content
-        pattern = r'(<a href="#{}">[^<]*(?:<[^>]*>[^<]*</[^>]*>)*[^<]*</a>)'.format(re.escape(header_id))
-        replacement = r'<a href="#{}">{}</a>'.format(header_id, content)
+        # Find and replace TOC links with the full header content (including HTML)
+        # Pattern matches: <a href="#id">...any content...</a>
+        # We use re.escape for the header_id to handle special characters safely
+        pattern = r'<a href="#{}">[^<]*(?:<[^>]*>[^<]*</[^>]*>)*[^<]*</a>'.format(re.escape(header_id))
+        replacement = '<a href="#{}">{}</a>'.format(header_id, content)
         toc_html = re.sub(pattern, replacement, toc_html)
     
     return toc_html
