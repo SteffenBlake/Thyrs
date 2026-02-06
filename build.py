@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """
 Build script to convert markdown to HTML with table of contents.
+
+This file is part of Thyrs.
+This work is licensed under CC BY-NC-ND 4.0.
+License: https://raw.githubusercontent.com/SteffenBlake/Thyrs/refs/heads/main/LICENSE
 """
 import markdown
 import re
@@ -31,7 +35,12 @@ def build_html():
     cache_buster = generate_cache_buster()
     
     # Create the full HTML document
-    html_template = f"""<!DOCTYPE html>
+    html_template = f"""<!--
+This file is part of Thyrs.
+This work is licensed under CC BY-NC-ND 4.0.
+License: https://raw.githubusercontent.com/SteffenBlake/Thyrs/refs/heads/main/LICENSE
+-->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
