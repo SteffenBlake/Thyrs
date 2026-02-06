@@ -34,6 +34,33 @@ def generate_cache_buster():
     """Generate a cache buster based on current timestamp."""
     return hashlib.md5(str(datetime.now().timestamp()).encode()).hexdigest()[:8]
 
+def fix_toc_with_dicier(toc_html, html_content):
+    """Fix TOC to include dicier spans from headers.
+    
+    The TOC extension strips HTML from header text, so we need to extract
+    the actual header content (which includes dicier spans) and update the
+    TOC links to match.
+    """
+    # Extract all headers with their IDs and content from the generated HTML
+    # Use DOTALL flag to handle headers that may span multiple lines
+    headers = re.findall(r'<h([1-6]) id="([^"]+)">(.+?)</h\1>', html_content, re.DOTALL)
+    
+    # Update TOC links to use the same content as the headers
+    for level, header_id, content in headers:
+        # Find and replace TOC links with the full header content (including HTML)
+        # Pattern explanation:
+        # - <a href="#header_id">  : opening anchor tag with the specific header ID
+        # - [^<]*                  : any text before nested tags
+        # - (?:<[^>]*>[^<]*</[^>]*>)* : zero or more nested HTML tags (e.g., <span>text</span>)
+        # - [^<]*                  : any text after nested tags
+        # - </a>                   : closing anchor tag
+        # This pattern matches the entire TOC link so we can replace it with the correct header content
+        pattern = r'<a href="#{}">[^<]*(?:<[^>]*>[^<]*</[^>]*>)*[^<]*</a>'.format(re.escape(header_id))
+        replacement = '<a href="#{}">{}</a>'.format(header_id, content)
+        toc_html = re.sub(pattern, replacement, toc_html)
+    
+    return toc_html
+
 def add_decorative_headers(html_content):
     """Add decorative SVG headers after H1 and H2 elements."""
     # Add decorative header after H1 tags
@@ -68,6 +95,9 @@ def build_html():
     
     html_content = md.convert(md_content)
     toc_html = md.toc
+    
+    # Fix TOC to include dicier spans from headers
+    toc_html = fix_toc_with_dicier(toc_html, html_content)
     
     # Add decorative headers after H1 and H2 elements
     html_content = add_decorative_headers(html_content)
