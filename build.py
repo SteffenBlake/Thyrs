@@ -67,6 +67,9 @@ License: https://raw.githubusercontent.com/SteffenBlake/Thyrs/refs/heads/main/LI
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Thyrs - Documentation">
     <title>Thyrs Documentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css?v={cache_buster}">
 </head>
 <body>
