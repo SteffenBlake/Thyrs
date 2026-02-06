@@ -54,9 +54,7 @@ def build_html():
             <div class="sidebar-header">
                 <h1>Thyrs</h1>
             </div>
-            <div class="toc">
-                {toc_html}
-            </div>
+            {toc_html}
         </nav>
         
         <!-- Main content -->
