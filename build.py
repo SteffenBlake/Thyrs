@@ -10,6 +10,25 @@ import markdown
 import re
 import hashlib
 from datetime import datetime
+from markdown.extensions import Extension
+from markdown.preprocessors import Preprocessor
+
+class DicierPreprocessor(Preprocessor):
+    """Convert {dice:CODE} syntax to <span class="dicier">CODE</span>"""
+    
+    def run(self, lines):
+        new_lines = []
+        for line in lines:
+            # Replace {dice:CODE} with <span class="dicier">CODE</span>
+            line = re.sub(r'\{dice:([^}]+)\}', r'<span class="dicier">\1</span>', line)
+            new_lines.append(line)
+        return new_lines
+
+class DicierExtension(Extension):
+    """Markdown extension for Dicier font support"""
+    
+    def extendMarkdown(self, md):
+        md.preprocessors.register(DicierPreprocessor(md), 'dicier', 175)
 
 def generate_cache_buster():
     """Generate a cache buster based on current timestamp."""
@@ -26,6 +45,7 @@ def build_html():
         'toc',  # Table of contents
         'extra',  # Extra features like tables, code blocks, etc.
         'nl2br',  # New line to break
+        DicierExtension(),  # Custom Dicier font support
     ])
     
     html_content = md.convert(md_content)
@@ -50,6 +70,7 @@ License: https://raw.githubusercontent.com/SteffenBlake/Thyrs/refs/heads/main/LI
     <link rel="stylesheet" href="styles.css?v={cache_buster}">
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <div class="page-container">
         <!-- Mobile burger menu button -->
         <button class="burger-menu" id="burgerMenu" aria-label="Toggle menu">
@@ -67,10 +88,24 @@ License: https://raw.githubusercontent.com/SteffenBlake/Thyrs/refs/heads/main/LI
         </nav>
         
         <!-- Main content -->
-        <main class="content">
+        <main class="content" id="main-content">
             <div class="content-wrapper">
                 {html_content}
             </div>
+            
+            <footer class="site-footer">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>License</h3>
+                        <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-ND 4.0</a>.</p>
+                        <p><a href="https://raw.githubusercontent.com/SteffenBlake/Thyrs/refs/heads/main/LICENSE" target="_blank" rel="noopener noreferrer">View Full License</a></p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Font Attribution</h3>
+                        <p><a href="https://speakthesky.itch.io/typeface-dicier" target="_blank" rel="noopener noreferrer">Dicier</a>, by Speak the Sky, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>.</p>
+                    </div>
+                </div>
+            </footer>
         </main>
     </div>
     

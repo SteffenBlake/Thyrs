@@ -4,6 +4,21 @@
  * License: https://raw.githubusercontent.com/SteffenBlake/Thyrs/refs/heads/main/LICENSE
  */
 
+/* 
+ * Dicier Font Face
+ * Dicier (https://speakthesky.itch.io/typeface-dicier), by Speak the Sky,
+ * licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+ */
+@font-face {
+    font-family: Dicier;
+    src: url('/fonts/Dicier-Pixel.woff2') format('woff2');
+}
+
+.dicier {
+    font-family: Dicier, sans-serif;
+    font-feature-settings: "liga" 1, "kern" 1, "calt" 1;
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -13,6 +28,24 @@
 
 html {
     scroll-behavior: smooth;
+}
+
+/* Skip to Content Button for Accessibility */
+.skip-to-content {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: #2563eb;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 0 0 5px 0;
+    z-index: 2000;
+    font-weight: 600;
+}
+
+.skip-to-content:focus {
+    top: 0;
 }
 
 body {
@@ -211,6 +244,48 @@ body {
     color: #6b7280;
 }
 
+/* Footer */
+.site-footer {
+    background: #1f2937;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 4rem;
+    padding: 2rem 0;
+    border-top: 3px solid #2563eb;
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.footer-section p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-section a {
+    color: #93c5fd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #dbeafe;
+    text-decoration: underline;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .burger-menu {
@@ -244,6 +319,10 @@ body {
     .content-wrapper h3 {
         font-size: 1.3rem;
     }
+    
+    .footer-content {
+        padding: 0 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -257,5 +336,9 @@ body {
     
     .content-wrapper h2 {
         font-size: 1.4rem;
+    }
+    
+    .footer-content {
+        padding: 0 1rem;
     }
 }
