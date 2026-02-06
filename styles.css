@@ -178,14 +178,14 @@ body {
 .content-wrapper h1 {
     font-size: 2.5rem;
     color: #1f2937;
-    margin: 2rem 0 1rem 0;
+    margin: 2rem 0 0 0;
     text-align: center;
 }
 
 .content-wrapper h2 {
     font-size: 2rem;
     color: #374151;
-    margin: 2.5rem 0 1rem 0;
+    margin: 2.5rem 0 0 0;
     text-align: center;
 }
 
@@ -201,7 +201,7 @@ body {
     width: 80%;
     max-width: 100%;
     height: auto;
-    margin: 0.5rem auto 1.5rem auto;
+    margin: 0 auto 1.5rem auto;
 }
 
 .decorative-header-small {
@@ -209,7 +209,7 @@ body {
     width: 30%;
     max-width: 100%;
     height: auto;
-    margin: 0.5rem auto 1.5rem auto;
+    margin: 0 auto 1.5rem auto;
 }
 
 .content-wrapper p {
