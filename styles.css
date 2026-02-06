@@ -331,15 +331,15 @@ body {
     }
     
     .content-wrapper h1 {
-        font-size: 2.5rem; /* 25% increase from 2rem */
+        font-size: 3.125rem; /* 25% increase from desktop 2.5rem */
     }
     
     .content-wrapper h2 {
-        font-size: 2rem; /* 25% increase from 1.6rem */
+        font-size: 2.5rem; /* 25% increase from desktop 2rem */
     }
     
     .content-wrapper h3 {
-        font-size: 1.625rem; /* 25% increase from 1.3rem */
+        font-size: 1.875rem; /* 25% increase from desktop 1.5rem */
     }
     
     .content-wrapper p {
@@ -361,11 +361,11 @@ body {
     }
     
     .content-wrapper h1 {
-        font-size: 2.25rem; /* 25% increase from 1.8rem */
+        font-size: 3.125rem; /* 25% increase from desktop 2.5rem */
     }
     
     .content-wrapper h2 {
-        font-size: 1.75rem; /* 25% increase from 1.4rem */
+        font-size: 2.5rem; /* 25% increase from desktop 2rem */
     }
     
     .footer-content {
