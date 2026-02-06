@@ -337,10 +337,6 @@ body {
 }
 
 @media (max-width: 480px) {
-    body {
-        font-size: 18px;
-    }
-
     .content-wrapper {
         padding: 4rem 1rem 2rem 1rem;
     }
@@ -351,10 +347,6 @@ body {
     
     .content-wrapper h2 {
         font-size: 1.4rem;
-    }
-    
-    .content-wrapper p {
-        font-size: 1.05rem;
     }
     
     .footer-content {
