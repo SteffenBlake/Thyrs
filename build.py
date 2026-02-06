@@ -48,8 +48,13 @@ def fix_toc_with_dicier(toc_html, html_content):
     # Update TOC links to use the same content as the headers
     for level, header_id, content in headers:
         # Find and replace TOC links with the full header content (including HTML)
-        # Pattern matches: <a href="#id">...any content...</a>
-        # We use re.escape for the header_id to handle special characters safely
+        # Pattern explanation:
+        # - <a href="#header_id">  : opening anchor tag with the specific header ID
+        # - [^<]*                  : any text before nested tags
+        # - (?:<[^>]*>[^<]*</[^>]*>)* : zero or more nested HTML tags (e.g., <span>text</span>)
+        # - [^<]*                  : any text after nested tags
+        # - </a>                   : closing anchor tag
+        # This pattern matches the entire TOC link so we can replace it with the correct header content
         pattern = r'<a href="#{}">[^<]*(?:<[^>]*>[^<]*</[^>]*>)*[^<]*</a>'.format(re.escape(header_id))
         replacement = '<a href="#{}">{}</a>'.format(header_id, content)
         toc_html = re.sub(pattern, replacement, toc_html)
