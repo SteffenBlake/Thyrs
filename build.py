@@ -10,6 +10,25 @@ import markdown
 import re
 import hashlib
 from datetime import datetime
+from markdown.extensions import Extension
+from markdown.preprocessors import Preprocessor
+
+class DicierPreprocessor(Preprocessor):
+    """Convert {dicier:CODE} syntax to <span class="dicier">CODE</span>"""
+    
+    def run(self, lines):
+        new_lines = []
+        for line in lines:
+            # Replace {dicier:CODE} with <span class="dicier">CODE</span>
+            line = re.sub(r'\{dicier:([^}]+)\}', r'<span class="dicier">\1</span>', line)
+            new_lines.append(line)
+        return new_lines
+
+class DicierExtension(Extension):
+    """Markdown extension for Dicier font support"""
+    
+    def extendMarkdown(self, md):
+        md.preprocessors.register(DicierPreprocessor(md), 'dicier', 175)
 
 def generate_cache_buster():
     """Generate a cache buster based on current timestamp."""
@@ -26,6 +45,7 @@ def build_html():
         'toc',  # Table of contents
         'extra',  # Extra features like tables, code blocks, etc.
         'nl2br',  # New line to break
+        DicierExtension(),  # Custom Dicier font support
     ])
     
     html_content = md.convert(md_content)
@@ -34,83 +54,20 @@ def build_html():
     # Generate cache buster for CSS
     cache_buster = generate_cache_buster()
     
-    # Create the full HTML document
-    html_template = f"""<!--
-This file is part of Thyrs.
-This work is licensed under CC BY-NC-ND 4.0.
-License: https://raw.githubusercontent.com/SteffenBlake/Thyrs/refs/heads/main/LICENSE
--->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Thyrs - Documentation">
-    <title>Thyrs Documentation</title>
-    <link rel="stylesheet" href="styles.css?v={cache_buster}">
-</head>
-<body>
-    <div class="page-container">
-        <!-- Mobile burger menu button -->
-        <button class="burger-menu" id="burgerMenu" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        
-        <!-- Sidebar navigation -->
-        <nav class="sidebar" id="sidebar">
-            <div class="sidebar-header">
-                <h1>Thyrs</h1>
-            </div>
-            {toc_html}
-        </nav>
-        
-        <!-- Main content -->
-        <main class="content">
-            <div class="content-wrapper">
-                {html_content}
-            </div>
-        </main>
-    </div>
+    # Read HTML template
+    with open('template.html', 'r', encoding='utf-8') as f:
+        html_template = f.read()
     
-    <script>
-        // Toggle sidebar on mobile
-        const burgerMenu = document.getElementById('burgerMenu');
-        const sidebar = document.getElementById('sidebar');
-        
-        burgerMenu.addEventListener('click', () => {{
-            sidebar.classList.toggle('active');
-            burgerMenu.classList.toggle('active');
-        }});
-        
-        // Close sidebar when clicking on a link (mobile only)
-        const tocLinks = document.querySelectorAll('.toc a');
-        tocLinks.forEach(link => {{
-            link.addEventListener('click', () => {{
-                if (window.innerWidth <= 768) {{
-                    sidebar.classList.remove('active');
-                    burgerMenu.classList.remove('active');
-                }}
-            }});
-        }});
-        
-        // Close sidebar when clicking outside (mobile only)
-        document.addEventListener('click', (e) => {{
-            if (window.innerWidth <= 768) {{
-                if (!sidebar.contains(e.target) && !burgerMenu.contains(e.target)) {{
-                    sidebar.classList.remove('active');
-                    burgerMenu.classList.remove('active');
-                }}
-            }}
-        }});
-    </script>
-</body>
-</html>"""
+    # Replace placeholders with actual content
+    html_output = html_template.format(
+        cache_buster=cache_buster,
+        toc_html=toc_html,
+        html_content=html_content
+    )
     
     # Write the HTML file
     with open('index.html', 'w', encoding='utf-8') as f:
-        f.write(html_template)
+        f.write(html_output)
     
     print(f"✓ Built index.html with cache buster: {cache_buster}")
 
