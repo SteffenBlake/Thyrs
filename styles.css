@@ -191,7 +191,7 @@ body {
 
 .content-wrapper h3 {
     font-size: 1.5rem;
-    color: #4b5563;
+    color: black;
     margin: 2rem 0 1rem 0;
 }
 
@@ -215,7 +215,7 @@ body {
 .content-wrapper p {
     margin: 1rem 0;
     line-height: 1.8;
-    color: #4b5563;
+    color: black;
     font-weight: 500;
 }
 
@@ -258,7 +258,7 @@ body {
 
 .content-wrapper li {
     margin: 0.5rem 0;
-    color: #4b5563;
+    color: black;
     font-weight: 500;
 }
 
