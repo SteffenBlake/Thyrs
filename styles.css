@@ -179,22 +179,37 @@ body {
     font-size: 2.5rem;
     color: #1f2937;
     margin: 2rem 0 1rem 0;
-    padding-bottom: 0.5rem;
-    border-bottom: 3px solid #2563eb;
+    text-align: center;
 }
 
 .content-wrapper h2 {
     font-size: 2rem;
     color: #374151;
     margin: 2.5rem 0 1rem 0;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #e5e7eb;
+    text-align: center;
 }
 
 .content-wrapper h3 {
     font-size: 1.5rem;
     color: #4b5563;
     margin: 2rem 0 1rem 0;
+}
+
+/* Decorative Header SVGs */
+.decorative-header-large {
+    display: block;
+    width: 80%;
+    max-width: 100%;
+    height: auto;
+    margin: 0.5rem auto 1.5rem auto;
+}
+
+.decorative-header-small {
+    display: block;
+    width: 30%;
+    max-width: 100%;
+    height: auto;
+    margin: 0.5rem auto 1.5rem auto;
 }
 
 .content-wrapper p {
@@ -316,19 +331,23 @@ body {
     }
     
     .content-wrapper h1 {
-        font-size: 2rem;
+        font-size: 3.125rem; /* 25% increase from desktop 2.5rem */
     }
     
     .content-wrapper h2 {
-        font-size: 1.6rem;
+        font-size: 2.5rem; /* 25% increase from desktop 2rem */
     }
     
     .content-wrapper h3 {
-        font-size: 1.3rem;
+        font-size: 1.875rem; /* 25% increase from desktop 1.5rem */
     }
     
     .content-wrapper p {
-        font-size: 1.05rem;
+        font-size: 1.47rem; /* 40% increase from 1.05rem */
+    }
+    
+    .content-wrapper li {
+        font-size: 1.47rem; /* 40% increase to match paragraphs */
     }
     
     .footer-content {
@@ -342,11 +361,11 @@ body {
     }
     
     .content-wrapper h1 {
-        font-size: 1.8rem;
+        font-size: 3.125rem; /* 25% increase from desktop 2.5rem */
     }
     
     .content-wrapper h2 {
-        font-size: 1.4rem;
+        font-size: 2.5rem; /* 25% increase from desktop 2rem */
     }
     
     .footer-content {
