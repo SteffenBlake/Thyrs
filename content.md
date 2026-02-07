@@ -84,11 +84,11 @@ Energy is stored in your Energy Container, which by default has a maximum storag
 Stamina represents your character's form of *banked* Action Points, which you cannot actively use. You can, however, convert Stamina into Energy via spending [Resources](#resources) by taking the [Meal](#meal) action, and to restore your Stamina pool you must take the [Sleep](#sleep) action. See the [Actions](#actions) section for more details.
 
 ### Capacity
-Capacity represents how many items your character can carry with them at once. By default characters have a Capacity of 8. All items and resources cost 1 Capacity to be carried, each.
+Capacity represents how many items your character can carry with them at once. By default characters have a Capacity of 8. All items and resources cost 1 Capacity each to be carried.
 
-A character may exceed their capacity by up to 5 by allowing themselves to become Encumbered. Encumbered characters must spend an additional 1 energy to take the [Proceed](#proceed) Action. See the [Actions](#actions) section for more details.
+A character may exceed their Capacity by up to 5 by allowing themselves to become Encumbered. Encumbered characters must spend an additional 1 energy to take the [Proceed](#proceed) Action. See the [Actions](#actions) section for more details.
 
-Characters may discard any inventory items they wish. Discarding items does not consume energy, nor does it spend their turn action. If an encumbered character reaches zero energy, they are forced to discard enough items immedieately in order to no longer be encumbered. Discarded items remain in the [Chamber](#chambers) they were discarded in, and can be retrieved later if the player wishes to.
+Characters may discard any inventory items they wish. Discarding items does not consume energy, nor does it spend their turn action. If an encumbered character reaches zero energy, they are forced to discard enough items immediately in order to no longer be encumbered. Discarded items remain in the [Chamber](#chambers) they were discarded in, and can be retrieved later if the player wishes to.
 
 ### Resources
 
