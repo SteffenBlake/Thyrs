@@ -45,7 +45,7 @@ To Play Thyrs, you will need the following:
 6. (Optional) 1 smaller "Energy" container ("pool") per player, enough to comfortably hold ~8 AP tokens in it at once (must be visually identifiable distinct from the Stamina container!)
 7. (Optional) Additional containers for storing Resource tokens for players, and larger containers for storing excess tokens in the center of the table.
 8. (Recommended) Paper and pens/pencils for each player to keep track of their inventory and character's state
-9. (Recommended) A marker of some form to track the current Narrator 
+9. (Recommended) The "Narrator Marker", a token of some form to track the current Narrator
 
 Recommendation: You will be well served to choose a deck with different visual appearance for each player and the Dungeon Deck, to make it easier to keep track of which cards belong to which/who's decks. Players are encouraged to bring their own decks to the table for personal flair.
 
@@ -59,12 +59,20 @@ Recommendation: You will be well served to choose a deck with different visual a
 5. Each player draws up to their maximum Energy storage limit worth of Action Points, and places these in their Energy pool. See [Energy](#Energy) for more information.
 6. Each player takes 2 Resource tokens. See [Inventory](#Inventory) and [Resources](#Resources) for more information.
 7. Each player draws a random card from the Dungeon Deck, and uses that to look up a random piece of non-enchanted equipment on the [Equipment Table](#Equipment-Table) that their character starts the game with equipped.
-8. All drawn cards are now shuffled back into the Dungeon Deck.
+8. Select a player to have the first turn of being The Narrator by selecting them at random and giving them the Narrator Marker.
+9. All drawn cards are now shuffled back into the Dungeon Deck.
 
 ## Game Rules
 
 ### Decks
 Decks represent the source of randomness in the Dungeon. Whenever you discard a card for a given deck, you place it face up beside it in a Discard Pile. Whenever you would draw a card from an empty deck, shuffle the Discard Pile back into the deck first, then draw the card.
+
+### The Narrator
+At any given time, one of the players is marked as The Narrator by being in possession of the Narrator Token. Whenever any random effect is rolled to signal something exists in the game (the chamber itself, items or objects in the chamber, events that occur in the chamber), the Narrator gets to describe what it looks like. Most random effects will provide a few adjectives to describe the object vaguely, and it is up to the Narrator to fill in the gaps.
+
+Note: This has no mechanical impact on the game, this is purely narrative for fun.
+
+Everytime players take the [Proceed](#Proceed) action, the Narrator Marker is handed one player clockwise. The recipient is now the new Narrator for the next Chamber!
 
 ### Energy
 
@@ -119,5 +127,5 @@ When you identify an item, the following steps occur in order:
 
 ### Enchantments
 
-There are a total of 53 enchantments in the game, one for each 
+There are a total of 53 enchantments in the game, one for each card in the Dungeon Deck. 
 
