@@ -130,5 +130,18 @@ When you **Identify** an **Item**, the following steps occur in order:
 
 ### Augments
 
-There are a total of 53 **Augments** in the game, one for each card in the Dungeon Deck.
+There are a total of 53 **Augments** in the game, one for each card in the **Dungeon Deck**. **Augments** are special effects that **Equipment** and **Characters** can possess. A character is affected by the **Augments** they directly possess, and the cumulative **Augments** of all their equipment they have currently **Equipped**. They are *not** affected by the **Augments** of **Equipment** they are **Carrying**
+
+To see the bonus any given **Augment** provides, you can look it up by name on the [Augment Table](#augment-table)
+
+A special classification of **Augments** are called **Curses**, see the following section for info on them.
+
+### Curses
+
+**Curses** are a specific class of **Augment** that has a *negative* effect, rather than positive. The general rule of thumb is **Curses** come from **Face** card rolls on the [Augment Table](#augment-table).
+
+Whenever an effect or rule refers to a **Curse**, it is referring to these specific types of **Augments**
+
+
+
 
