@@ -264,11 +264,10 @@ body {
 
 /* Footer */
 .site-footer {
-    background: #1f2937;
-    color: rgba(255, 255, 255, 0.8);
+    background: black;
+    color: white;
     margin-top: 4rem;
     padding: 2rem 0;
-    border-top: 3px solid #2563eb;
 }
 
 .footer-content {
@@ -294,8 +293,7 @@ body {
 }
 
 .footer-section a {
-    color: #93c5fd;
-    text-decoration: none;
+    color: white;
     transition: color 0.3s ease;
 }
 
