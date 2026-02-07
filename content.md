@@ -40,12 +40,84 @@ To Play Thyrs, you will need the following:
 1. A deck of 52 cards for each player
 2. One additional deck of 52 cards + jokers for the "Dungeon Deck".
 3. (Optional) A set of Resource tokens, approximately ~10 or so needed per player.
-4. (Optional) A set of Action Point ("AP") tokens, approximately ~20 or so needed per player. Note you will want Resource and AP tokens to be visually distinct!
-5. (Optional) 1 larger "Stamina" container per player, enough to comfortably hold ~20 AP tokens in it at once
-6. (Optional) 1 smaller "Energy" container per player, enough to comfortably hold ~6 AP tokens in it at once (must be visually identifiable distinct from the Stamina container!)
+4. (Optional) A set of Action Point ("AP") tokens, approximately ~25 or so needed per player. Note you will want Resource and AP tokens to be visually distinct!
+5. (Optional) 1 larger "Stamina" container ("pool") per player, enough to comfortably hold ~16 AP tokens in it at once
+6. (Optional) 1 smaller "Energy" container ("pool") per player, enough to comfortably hold ~8 AP tokens in it at once (must be visually identifiable distinct from the Stamina container!)
 7. (Optional) Additional containers for storing Resource tokens for players, and larger containers for storing excess tokens in the center of the table.
 8. (Recommended) Paper and pens/pencils for each player to keep track of their inventory and character's state
+9. (Recommended) A marker of some form to track the current Narrator 
 
 Recommendation: You will be well served to choose a deck with different visual appearance for each player and the Dungeon Deck, to make it easier to keep track of which cards belong to which/who's decks. Players are encouraged to bring their own decks to the table for personal flair.
 
 ### Setup
+
+1. Each player removes the jokers from their respective decks, shuffles them, then places their deck in front of them at hand
+2. The Dungeon Deck (with jokers intact) is shuffled, then placed at the center of the playing space
+3. Players choose 12 Abilities from the Ability table (See: [Ability Table](#Ability-Table), ignoring the Face Card abilities, and divide those abilities as evenly as they can amongst the players' characters.
+   a. (Optional) for additional randomness, you may elect to instead draw cards from the top of the Dungeon Deck until you have drawn 12 non-face cards, and use those to select the abilities at random from the [Ability Table](#Ability-Table) via their associated card.
+4. Each player draws up to their maximum Stamina storage limit worth of Action Points and places these in their Stamina pool. See [Stamina](#Stamina) for more information.
+5. Each player draws up to their maximum Energy storage limit worth of Action Points, and places these in their Energy pool. See [Energy](#Energy) for more information.
+6. Each player takes 2 Resource tokens. See [Inventory](#Inventory) and [Resources](#Resources) for more information.
+7. Each player draws a random card from the Dungeon Deck, and uses that to look up a random piece of non-enchanted equipment on the [Equipment Table](#Equipment-Table) that their character starts the game with equipped.
+8. All drawn cards are now shuffled back into the Dungeon Deck.
+
+## Game Rules
+
+### Decks
+Decks represent the source of randomness in the Dungeon. Whenever you discard a card for a given deck, you place it face up beside it in a Discard Pile. Whenever you would draw a card from an empty deck, shuffle the Discard Pile back into the deck first, then draw the card.
+
+### Energy
+
+Energy represents your character's form of *useable* Action Points you can use to perform [Actions](#Actions). Most actions consume some amount of Energy as a cost.
+
+Energy is stored in your Energy Container, which by default has a maximum storage limit of 8, however various effects can alter this limit. Refilling your Energy requires [Stamina](#Stamina). 
+
+### Stamina
+Stamina represents your character's form of *banked* Action Points, which you cannot actively use. You can, however, convert Stamina into Energy via spending [Resources](#Resources) by taking the [Meal](#Meal) action, and to restore your Stamina pool you must take the [Sleep](#Sleep) action. See the [Actions](#Actions) section for more details.
+
+### Capacity
+Capacity represents how many items your character can carry with them at once. By default characters have a Capacity of 8. All items and resources cost 1 Capacity to be carried, each.
+
+A character may exceed their capacity by up to 5 by allowing themselves to become Encumbered. Encumbered characters must spend an additional 1 energy to take the [Proceed](#Proceed) Action. See the [Actions](#Actions) section for more details.
+
+Characters may discard any inventory items they wish. Discarding items does not consume energy, nor does it spend their turn action. If an encumbered character reaches zero energy, they are forced to discard enough items immedieately in order to no longer be encumbered. Discarded items remain in the [Chamber](#Chambers) they were discarded in, and can be retrieved later if the player wishes to.
+
+### Resources
+
+Resources represent materials required to sustain life amongst your group. Typically they in some form represent forms of water, food, and fuel. Resources require 1 [Carrying Capacity](#Capacity) each.
+
+Via the [Meal](#Meal) Action, you can spend your Resources to convert [Stamina](#Stamina) into [Energy](#Energy)
+
+### Items
+Items take the form of one of two types: Consumables and Equipment. Either way they require one Carrying Capacity each to carry with you. **Note:** actively equipped equipment do *not* count as being carried, and therefor do *not* take up Carrying Capacity.
+
+### Consumables
+You will find and acquire a wide variety of items in the Dungeon that can be consumed to perform all manner of effects. After spending a consumable item it is destroyed and your character no longer possesses it.
+
+### Equipment
+Equipment comes in two flavors. Normal and Enchanted. Whenever you initially acquire a new equipment (other than your character's starting one) you will have no idea if it is enchanted or not. To discover if it is, you must identify it.
+
+In order to equip an enchanted item, you must choose to attune to it. Once you are attuned to an enchanted item, it can no longer be unequipped by normal means while it remains enchanted. Various effects can bypass this restriction however.
+
+### Rolling the equipment
+Whenever you acquire a piece of equipment, draw a card from the Dungeon Deck and use that to look up the properties of what you found via the [Equipment Table](#Equipment-Table). The current Narrator gets to then describe, based on those properties, what type of equipment you have found. For example if the properties are "Ornate-Arms", then they might describe a gilt inlaid pair of gauntlets.
+
+### Identifying Equipment
+There are primarily two common ways to identify an item. The first is using an Identification Stone, which is a type of Consumable item. The other is by equipping the unidentified item, at which point it will become identified instantly.
+
+If you choose to identify an item by equipping it, and the item turns out to be enchanted, **you will instantly attune to it and be unable to remove it**
+
+When you identify an item, the following steps occur in order:
+
+1. Draw a card from the Dungeon Deck
+2. If you draw a card that is any suit of {dicier:HEARTS DIAMONDS SPADES}, the item is Normal.
+3a. However, if you managed to draw a {dicier:CLUBS} suit card, the item is enchanted.
+3b. If you drew the Joker the item is enchanted with a guarenteed curse, see the next step.
+5. If the equipment is enchanted, draw a card from the top of the deck. If you got a gaurenteed curse, draw cards until you draw a face card.
+6. Look up what enchantment the equipment has on it via the [Enchantment Table](#Enchantment-Table), this piece of equipment now has that enchantment on it, and anyone with that piece of equipment equipped has that ability active on them while they keep it equipped on them.
+7. Either way, discard any cards drawn.
+
+### Enchantments
+
+There are a total of 53 enchantments in the game, one for each 
+
